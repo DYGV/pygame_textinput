@@ -16,12 +16,7 @@ from pygame_jp_textinput.textinput import TextInput
 def main():
     pygame.init()
     screen = pygame.display.set_mode((800, 600))
-    pygame.display.update()
-    # 使うフォント、フォントカラー
-    font = pygame.font.SysFont("yumincho", 30)
-    font_color = (255, 0, 0)
-    # フォントとフォントカラーでTextInputをインスタンス化
-    text_box = TextInput(font, font_color)
+    text_box = TextInput(pygame.font.SysFont("yumincho", 30), (255, 0, 0))
     while True:
         events = pygame.event.get()
         for event in events:
@@ -31,7 +26,7 @@ def main():
             if event.type == USEREVENT:
                 # 入力確定したテキスト
                 print(event.Text)
-        pygame.display.get_surface().fill((112, 225, 112))
+        screen.fill((112, 225, 112))
         text_box.update(events)
         screen.blit(text_box.get_surface, (10, 550))
         pygame.display.update()
