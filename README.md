@@ -12,7 +12,7 @@ pip install git+https://github.com/DYGV/pygame_jp_textinput.git
 import sys
 
 import pygame
-from pygame_jp_textinput.textinput import TextInput
+from pygame_ime_textinput.textinput import TextInput
 
 
 def main():
