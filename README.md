@@ -9,7 +9,6 @@ pip install git+https://github.com/DYGV/pygame_jp_textinput.git
 import sys
 
 import pygame
-from pygame.locals import *
 from pygame_jp_textinput.textinput import TextInput
 
 
@@ -23,7 +22,7 @@ def main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit(0)
-            if event.type == USEREVENT:
+            if event.type == pygame.USEREVENT:
                 # 入力確定したテキスト
                 print(event.Text)
         screen.fill((112, 225, 112))
