@@ -20,7 +20,7 @@ def main():
     # 使うフォント、フォントカラー
     font = pygame.font.SysFont("yumincho", 30)
     font_color = (255, 0, 0)
-    # フォントとフォントカラーでTextBoxをインスタンス化
+    # フォントとフォントカラーでTextInputをインスタンス化
     text_box = TextInput(font, font_color)
     while True:
         events = pygame.event.get()
@@ -39,5 +39,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 ```
+![実行結果](https://user-images.githubusercontent.com/8480644/117116657-941ea480-adc9-11eb-97fd-90c3400f4bfa.gif)
+
