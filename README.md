@@ -27,7 +27,7 @@ def main():
                 print(event.Text)
         screen.fill((112, 225, 112))
         text_box.update(events)
-        screen.blit(text_box.get_surface, (10, 550))
+        screen.blit(text_box.get_surface(), (10, 550))
         pygame.display.update()
 
 
