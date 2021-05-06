@@ -11,9 +11,18 @@ class TextInput(Text):
     ):
         super().__init__()
         pygame.key.start_text_input()
+        pygame.key.set_repeat(30)
         self.font = font
         self.font_color = font_color
         self.text_surface = None
+         # テキスト入力時のキーとそれに対応するイベント
+        self.event_trigger = {
+            pygame.K_BACKSPACE: self.delete_left_of_cursor,
+            pygame.K_DELETE: self.delete_right_of_cursor,
+            pygame.K_LEFT: self.move_cursor_left,
+            pygame.K_RIGHT: self.move_cursor_right,
+            pygame.K_RETURN: self.enter,
+        }
         self.input_text = ""
         self.set_surface(format(self))
 
@@ -24,19 +33,11 @@ class TextInput(Text):
         return self.text_surface
 
     def update(self, events: List[pygame.event.Event]) -> None:
-        # テキスト入力時のキーとそれに対応するイベント
-        event_trigger = {
-            pygame.K_BACKSPACE: self.delete_left_of_cursor,
-            pygame.K_DELETE: self.delete_right_of_cursor,
-            pygame.K_LEFT: self.move_cursor_left,
-            pygame.K_RIGHT: self.move_cursor_right,
-            pygame.K_RETURN: self.enter,
-        }
         for event in events:
             # キーダウンかつ、全角入力中でない
             if event.type == pygame.KEYDOWN and not self.is_editing:
-                if event.key in event_trigger.keys():
-                    self.input_text = event_trigger[event.key]()
+                if event.key in self.event_trigger.keys():
+                    self.input_text = self.event_trigger[event.key]()
                     self.set_surface(self.input_text)
                 # 入力の確定
                 if event.unicode in ("\r", "") and event.key == pygame.K_RETURN:
