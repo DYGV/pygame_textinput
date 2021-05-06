@@ -1,10 +1,11 @@
 # Input system support in Pygame
 
-**This is a library that supports input using IME and direct input in pygame**  
-(PygameでIMEを使った入力を支援するライブラリです)
+**This is a library that supports input using IME and direct input in pygame.**  
+(PygameでIMEや直接入力を支援するライブラリです)  
+As far as I can tell, you can type in English, Japanese, and Chinese.
 ## install with pip
 ```
-pip install git+https://github.com/DYGV/pygame_ime_textinput.git
+pip install git+https://github.com/DYGV/pygame_textinput.git
 ```
 
 ## Usage of example
@@ -12,7 +13,7 @@ pip install git+https://github.com/DYGV/pygame_ime_textinput.git
 import sys
 
 import pygame
-from pygame_ime_textinput.textinput import TextInput
+from pygame_textinput.textinput import TextInput
 
 
 def main():

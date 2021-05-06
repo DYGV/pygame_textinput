@@ -1,7 +1,7 @@
 import os
 import sys
 
-sys.path.append(os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + "/../pygame_ime_textinput"))
+sys.path.append(os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + "/../pygame_textinput"))
 
 from text import Text
 

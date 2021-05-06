@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "pygame_ime_textinput"
+name = "pygame_textinput"
 version = "0.1.0"
 description = ""
 authors = ["DYGV <11eisuke88@gmail.com>"]

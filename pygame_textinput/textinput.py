@@ -11,7 +11,6 @@ class TextInput(Text):
     ):
         super().__init__()
         pygame.key.start_text_input()
-        pygame.key.set_repeat(30)
         self.font = font
         self.font_color = font_color
         self.text_surface = None
