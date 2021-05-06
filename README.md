@@ -4,7 +4,7 @@
 (PygameでIMEを使った入力を支援するライブラリです)
 ## install with pip
 ```
-pip install git+https://github.com/DYGV/pygame_jp_textinput.git
+pip install git+https://github.com/DYGV/pygame_ime_textinput.git
 ```
 
 ## Usage of example
